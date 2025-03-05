@@ -50,16 +50,22 @@ getID('rps').addEventListener('click', function(event){
             setTimeout(() => {
                 alert("Congrats!!! You Won... Play again?..");
                 getID('result').innerText = '';
+                cntAI = 0;
+                cntYou = 0;
             }, 300);
         else if(cntAI > cntRound)
             setTimeout(() => {
                 alert("Oops!!! AI Won... Play again?..");
                 getID('result').innerText = '';
+                cntAI = 0;
+                cntYou = 0;
         }, 300);
         else
             setTimeout(() => {
                 alert("Match DRAW... Play again?..");
                 getID('result').innerText = '';
+                cntAI = 0;
+                cntYou = 0;
             }, 300);
     }
 })
