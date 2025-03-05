@@ -72,7 +72,7 @@ getID('rps').addEventListener('click', function(event){
     }
     else{
         getID('result').innerText = 'Draw';
-        getID('result').style.color = 'white';
+        getID('result').style.color = 'gray';
 
     }
     if(cntRound%3 === 0) {
