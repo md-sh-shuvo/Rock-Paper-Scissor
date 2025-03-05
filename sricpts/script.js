@@ -2,32 +2,37 @@ const getID = (id) => document.getElementById(id);
 
 let cntRound = 0, cntYou = 0, cntAI = 0;;
 
+['rock', 'paper', 'scissor'].forEach(id => {
+    getID(id).classList.add('bg-green-500');
+})
+
 getID('rps').addEventListener('click', function(event){
+    let target = event.target.closest('div'); 
+    if (!target || !['rock', 'paper', 'scissor'].includes(target.id)) return;
+      
     cntRound++;
-    getID('rock').classList.remove('bg-gray-500');
-    getID('paper').classList.remove('bg-gray-500');
-    getID('scissor').classList.remove('bg-gray-500');
-    getID('rock').classList.remove('bg-black');
-    getID('paper').classList.remove('bg-black');
-    getID('scissor').classList.remove('bg-black');
+
+    ['rock', 'paper', 'scissor'].forEach(id =>{
+        getID(id).classList.remove('bg-green-500', 'bg-black');
+    })
 
     if(event.target.id === 'rock'){
-        getID('rock').classList.add('bg-black');
 
-        getID('paper').classList.add('bg-gray-500');
-        getID('scissor').classList.add('bg-gray-500');
+        getID('rock').classList.add('bg-black');
+        getID('paper').classList.add('bg-green-500');
+        getID('scissor').classList.add('bg-green-500');
     }
     else if(event.target.id === 'paper'){
         getID('paper').classList.add('bg-black');
-
-        getID('rock').classList.add('bg-gray-500');
-        getID('scissor').classList.add('bg-gray-500');
+        getID('rock').classList.add('bg-green-500');
+        getID('scissor').classList.add('bg-green-500');
+        
     }
     else if(event.target.id === 'scissor'){
         getID('scissor').classList.add('bg-black');
+        getID('rock').classList.add('bg-green-500');
+        getID('paper').classList.add('bg-green-500');
 
-        getID('rock').classList.add('bg-gray-500');
-        getID('paper').classList.add('bg-gray-500');
     }
 
 
@@ -80,6 +85,9 @@ getID('rps').addEventListener('click', function(event){
             setTimeout(() => {
                 alert("Congrats!!! You Won... Play again?..");
                 getID('result').innerText = 'Start';
+                ['rock', 'paper', 'scissor'].forEach(id =>{
+                    getID(id).classList.add('bg-green-500');
+                })
                 cntAI = 0;
                 cntYou = 0;
             }, 300);
@@ -87,6 +95,9 @@ getID('rps').addEventListener('click', function(event){
             setTimeout(() => {
                 alert("Oops!!! AI Won... Play again?..");
                 getID('result').innerText = 'Start';
+                ['rock', 'paper', 'scissor'].forEach(id =>{
+                    getID(id).classList.add('bg-green-500');
+                })
                 cntAI = 0;
                 cntYou = 0;
         }, 300);
@@ -94,8 +105,12 @@ getID('rps').addEventListener('click', function(event){
             setTimeout(() => {
                 alert("Match DRAW... Play again?..");
                 getID('result').innerText = 'Start';
+                ['rock', 'paper', 'scissor'].forEach(id =>{
+                    getID(id).classList.add('bg-green-500');;
+                })
                 cntAI = 0;
                 cntYou = 0;
             }, 300);
     }
 })
+
