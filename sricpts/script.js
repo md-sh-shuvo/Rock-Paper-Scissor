@@ -4,6 +4,34 @@ let cntRound = 0, cntYou = 0, cntAI = 0;;
 
 getID('rps').addEventListener('click', function(event){
     cntRound++;
+    getID('rock').classList.remove('bg-gray-500');
+    getID('paper').classList.remove('bg-gray-500');
+    getID('scissor').classList.remove('bg-gray-500');
+    getID('rock').classList.remove('bg-black');
+    getID('paper').classList.remove('bg-black');
+    getID('scissor').classList.remove('bg-black');
+
+    if(event.target.id === 'rock'){
+        getID('rock').classList.add('bg-black');
+
+        getID('paper').classList.add('bg-gray-500');
+        getID('scissor').classList.add('bg-gray-500');
+    }
+    else if(event.target.id === 'paper'){
+        getID('paper').classList.add('bg-black');
+
+        getID('rock').classList.add('bg-gray-500');
+        getID('scissor').classList.add('bg-gray-500');
+    }
+    else if(event.target.id === 'scissor'){
+        getID('scissor').classList.add('bg-black');
+
+        getID('rock').classList.add('bg-gray-500');
+        getID('paper').classList.add('bg-gray-500');
+    }
+
+
+
     let arr = ['Rock', 'Paper', 'Scissor'];
     let index = Math.floor(Math.random()*arr.length);
     let aiTurn = arr[index];
