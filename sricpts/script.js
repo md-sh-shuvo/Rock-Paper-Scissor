@@ -53,7 +53,7 @@ getID('rps').addEventListener('click', function(event){
                 cntAI = 0;
                 cntYou = 0;
             }, 300);
-        else if(cntAI > cntRound)
+        else if(cntAI > cntYou)
             setTimeout(() => {
                 alert("Oops!!! AI Won... Play again?..");
                 getID('result').innerText = '';
