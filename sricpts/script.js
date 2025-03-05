@@ -49,10 +49,10 @@ getID('rps').addEventListener('click', function(event){
         if(cntYou > cntAI) 
             setTimeout(() => {
                 alert("Congrats!!! You Won... Play again?..");
-            }, 100);
+            }, 300);
         else 
             setTimeout(() => {
                 alert("Oops!!! AI Won... Play again?..");
-            }, 100);
+            }, 300);
     }
 })
