@@ -1,5 +1,7 @@
 const getID = (id) => document.getElementById(id);
-let cntRound = 0;
+
+let cntRound = 0, cntYou = 0, cntAI = 0;;
+
 getID('rps').addEventListener('click', function(event){
     cntRound++;
     let arr = ['Rock', 'Paper', 'Scissor'];
@@ -9,7 +11,7 @@ getID('rps').addEventListener('click', function(event){
     getID('random').innerText = aiTurn;
     
     
-    let cntYou = 0, cntAI = 0;
+    
     if(youTurn === 'Rock' && aiTurn == 'Paper'){
         getID('result').innerText = 'AI Won';
         getID('result').style.color = 'red';
@@ -49,21 +51,21 @@ getID('rps').addEventListener('click', function(event){
         if(cntYou > cntAI) 
             setTimeout(() => {
                 alert("Congrats!!! You Won... Play again?..");
-                getID('result').innerText = '';
+                getID('result').innerText = 'Start';
                 cntAI = 0;
                 cntYou = 0;
             }, 300);
         else if(cntAI > cntYou)
             setTimeout(() => {
                 alert("Oops!!! AI Won... Play again?..");
-                getID('result').innerText = '';
+                getID('result').innerText = 'Start';
                 cntAI = 0;
                 cntYou = 0;
         }, 300);
         else
             setTimeout(() => {
                 alert("Match DRAW... Play again?..");
-                getID('result').innerText = '';
+                getID('result').innerText = 'Start';
                 cntAI = 0;
                 cntYou = 0;
             }, 300);
